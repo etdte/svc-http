@@ -1,0 +1,38 @@
+{
+  "name": "etdte/svc-http",
+  "description": "Basic wrapper for http calls to API services",
+  "license": "MIT",
+  "require": {
+    "php": "^8.2",
+    "guzzlehttp/guzzle": "^7.7",
+    "illuminate/http": ">= 9.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^8.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Etdte\\SvcHttp\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "@php vendor/bin/testbench package:discover --ansi"
+    ]
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "allow-plugins": {
+      "php-http/discovery": false
+    }
+  }
+}
